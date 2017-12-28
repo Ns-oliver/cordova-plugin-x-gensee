@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="cordova-plugin-x-gensee"
+    version="1.0.0">
+    <name>Gensee</name>
+    <description>Cordova Gensee Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,Gensee</keywords>
+    <engines>
+            <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <js-module src="www/Gensee.js" name="Gensee">
+        <clobbers target="window.Gensee" />
+    </js-module>
+
+    <!-- ios -->
+    <platform name="ios">
+
+        <config-file target="config.xml" parent="/*">
+            <feature name="GenseeVideo">
+                <param name="ios-package" value="GenseeVideo" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/GenseeVideo.h" />
+        <source-file src="src/ios/GenseeVideo.m" />
+
+    </platform>
+</plugin>
